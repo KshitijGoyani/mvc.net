@@ -1,0 +1,62 @@
+﻿@model Lab5.Models.ViewModels.DealsViewModel
+
+@{
+    ViewData["Title"] = "Customer List";
+}
+
+<h1>Customer List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Customer</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Customers.FirstOrDefault().LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Customers.FirstOrDefault().FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.Customers.FirstOrDefault().BirthDate)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>@customer.LastName</td>
+                <td>@customer.FirstName</td>
+                <td>@customer.BirthDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a asp-action="Index" asp-route-id="@customer.Id" class="btn btn-primary btn-sm">Select</a>
+                    <a asp-action="EditSubscriptions" asp-route-id="@customer.Id" class="btn btn-success btn-sm">Edit Subscriptions</a>
+                    <a asp-action="Edit" asp-route-id="@customer.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@customer.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@customer.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (ViewData["SelectedCustomerName"] != null)
+{
+    <h2>Stores Subscribed by: @ViewData["SelectedCustomerName"]</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Store Title</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var store in (List<Lab5.Models.Store>)ViewData["SubscribedStores"])
+            {
+                <tr>
+                    <td>@store.Title</td>
+                    <td>@store.Fee</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

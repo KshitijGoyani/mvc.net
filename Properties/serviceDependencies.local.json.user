@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2024-12-07T04:18:19.2094485Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2024-12-07T04:18:09.3156418Z"
+    },
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2024-12-07T04:19:17.0027449Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "d49dbaaa-bbda-483b-9e14-c98be4a5f968"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "IshanVani-Labs"
+    },
+    "storage1.resourceGroupName": {
+      "Name": "storage1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "IshanVani-Labs"
+    },
+    "storage1.subscriptionId": {
+      "Name": "storage1.subscriptionId",
+      "Type": "subscription",
+      "Value": "d49dbaaa-bbda-483b-9e14-c98be4a5f968"
+    }
+  }
+}

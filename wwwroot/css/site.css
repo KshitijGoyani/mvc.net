@@ -1,0 +1,42 @@
+﻿/* General Layout Styles */
+html {
+    font-size: 14px;
+    height: 100%; /* Ensure the page spans the full height */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Makes the body a flex container */
+    min-height: 100vh; /* Ensures the body spans the full viewport height */
+    margin: 0; /* Reset default margins */
+}
+
+.container.mt-4 {
+    flex: 1; /* Takes up available space, pushing the footer down */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #343a40; /* Dark background for contrast */
+    color: #ffffff; /* White text for readability */
+    text-align: center; /* Center text horizontally */
+    font-size: 0.875rem; /* Slightly smaller font for footer text */
+    padding: 10px 0;
+}
+
+    /* Footer link styles */
+    .footer a {
+        color: #ffffff; /* Footer link color */
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            color: #d3d3d3; /* Lighter color on hover */
+            text-decoration: underline;
+        }

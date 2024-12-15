@@ -1,0 +1,60 @@
+﻿@model Lab5.Models.ViewModels.DealsViewModel
+
+@{
+    ViewData["Title"] = "Stores";
+}
+
+<h1>Store List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Store</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Store Title</th>
+            <th>Fee</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var store in Model.Stores)
+        {
+            <tr>
+                <td>@store.Title</td>
+                <td>@store.Fee</td>
+                <td>
+                    <a asp-action="Index" asp-route-id="@store.Id" class="btn btn-primary">Select</a>
+                    <a asp-controller="Flyers" asp-action="Index" asp-route-id="@store.Id" class="btn btn-success">Flyers </a>
+                    <a asp-action="Edit" asp-route-id="@store.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@store.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@store.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (ViewData["Subscribers"] != null)
+{
+    <h2>Subscribers to Store: @ViewData["SelectedStoreTitle"]</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birth Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var subscriber in (List<Lab5.Models.Customer>)ViewData["Subscribers"])
+            {
+                <tr>
+                    <td>@subscriber.FirstName @subscriber.LastName</td>
+                    <td>@subscriber.BirthDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

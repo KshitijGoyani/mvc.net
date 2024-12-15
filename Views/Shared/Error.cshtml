@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Error";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Lab5 Project</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-4 text-danger">Oops!</h1>
+            <h2 class="text-danger">An error occurred while processing your request.</h2>
+            <p class="lead">We’re sorry for the inconvenience. Please try again later.</p>
+            <p>If the problem persists, <a href="@Url.Action("Index", "Home")">return to the homepage</a>.</p>
+            <a href="javascript:history.back()" class="btn btn-primary mt-3">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
